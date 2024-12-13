@@ -1,0 +1,53 @@
+<h1>home page</h1>
+<!-- <img src={{link}} alt="" /> -->
+<!-- <input type="text"  (keydown.n)="keydown()" /> -->
+<!-- <input type="text"  (keydown.n)="keydown($event)" /> -->
+<button [attr.data.bsbs]="name" (click)="sayHello()">helal</button>
+
+<h2 *ngIf="isAdmin ">{{name}}</h2>
+
+<section class="container mx-auto bg-slate-500">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    @for(product of products; track $index){
+    <div class="border border-red-500 p-4">
+      <img
+        [src]="product.imgSrc"
+        alt="{{product.name}}"
+        class="w-full h-auto"
+      />
+      <h4>even :{{$even}}</h4>
+      <p>{{$index}}</p>
+      <h3>{{ product.name }}</h3>
+      <h5>{{ product.price }}</h5>
+      @for(review of product.reviews; track $index){
+      <p>{{ review }}</p>
+      }
+    </div>
+
+    }
+  </div>
+
+
+      <button #hover>Show Data</button>    @defer( on viewport(hover)){
+    <app-recom-data></app-recom-data>
+    }@placeholder(minimum 3s) {
+    <p>waiting...</p>
+    }
+  @if(auth==='admin'){
+  <button>admin</button>
+  }@else if(auth==='user'){
+  <button>user</button>
+  }@else{
+  <button>guest</button>
+  }
+</section>
+
+<!--
+ @for(){
+    count:length ,
+     index:number, 
+     last:bool,
+      first:bool,
+      even:bool, 
+}
+ -->

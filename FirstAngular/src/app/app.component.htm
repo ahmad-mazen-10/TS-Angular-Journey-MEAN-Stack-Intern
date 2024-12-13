@@ -1,0 +1,22 @@
+<nav class="w-full fixed">
+    <ul class="bg-neutral-800 flex justify-around text-white">
+        <li>
+            <a routerLinkActive="text-black bg-neutral-400 px-2 rounded" [routerLinkActiveOptions]="{ exact: true }" routerLink="home">Home</a>
+        </li>
+        <li>
+            <a routerLinkActive="text-black bg-neutral-400 px-2 rounded" [routerLinkActiveOptions]="{ exact: true }" routerLink="about">About</a>
+        </li>
+        <li>
+            <a routerLinkActive="text-black bg-neutral-400 px-2 rounded" [routerLinkActiveOptions]="{ exact: true }" routerLink="gallery">Gallery</a>
+        </li>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>
+<home-selector></home-selector>
+<!-- <about-selector></about-selector> -->
+<!-- <app-blog></app-blog> -->
+
+<div appCustomDirective class="mt-5">FrontEnd</div>
+
+
